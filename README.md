@@ -661,5 +661,3 @@ const { name, age } = person; // Destructuring the object into separate variable
 console.log(name); // Expected output: 'Alice'
 console.log(age); // Expected output: 25
 ```
-
-Certainly, let's add content for `undefined` and `null` data types:
