@@ -34,11 +34,13 @@ arranged from basic to advanced, with clear code examples and explanations.
     - Spread Operator
     - Destructuring
 
+---
+
 ### Variables and Variable Types
 
-In JavaScript, variables are used to store data values. JavaScript is a
-dynamically typed language, which means you don't have to specify the type of
-data that a variable will store.
+Variables are used to store data values. JavaScript is a dynamically typed
+language, which means you don't have to specify the type of data that a variable
+will store.
 
 ```javascript
 // Declaring a constant variable. This value cannot be changed
@@ -53,9 +55,85 @@ let myVariable = 20;
 var myOldVariable = 30;
 ```
 
-#### Types of values
+#### Number
 
-##### String
+The Number data type can represent both integers (whole) and floating-point
+(decimal) numbers.
+
+```javascript
+// Declaring numbers
+let integer = 10;
+let floatingPoint = 10.5;
+
+// 'typeof' returns the type of a variable
+// Expected output: "number"
+console.log(typeof integer);
+
+// Arithmetic operations
+let sum = integer + 5; // 15
+let difference = integer - 5; // 5
+let product = integer * 2; // 20
+let quotient = integer / 2; // 5
+
+// Modulus operator returns the remainder of division
+// Expected output: 1
+console.log(11 % 2);
+
+// Exponentiation
+// Expected output: 100
+console.log(10 ** 2);
+```
+
+#### Boolean
+
+Booleans represent one of two values: `true` or `false`. They are typically used
+for conditional testing.
+
+```javascript
+// Declaring booleans
+const isTrue = true;
+const isFalse = false;
+
+// 'typeof' returns the type of a variable
+// Expected output: "boolean"
+console.log(typeof isTrue);
+
+// Logical operations
+// AND (&&) - true if both operands are true
+// Expected output: false
+console.log(isTrue && isFalse);
+
+// OR (||) - true if at least one of the operands is true
+// Expected output: true
+console.log(isTrue || isFalse);
+
+// NOT (!) - negates the value
+// Expected output: false
+console.log(!isTrue);
+
+// Comparison
+// Equal to
+// Expected output: true
+console.log(10 == 10);
+
+// Not equal to
+// Expected output: true
+console.log(10 != 5);
+
+// Strictly equal (checks value and type)
+// Expected output: false
+console.log(10 === "10");
+
+// Greater than
+// Expected output: true
+console.log(10 > 5);
+
+// Less than
+// Expected output: false
+console.log(10 < 5);
+```
+
+#### String
 
 Strings are sequences of characters used to represent text. They can be enclosed
 in single quotes (`'`), double quotes (`"`), or backticks (`).
@@ -89,7 +167,7 @@ console.log(myString.startsWith("Hello"));
 console.log(myString.slice(0, 5));
 ```
 
-##### Array
+#### Array
 
 Arrays are special variables that can hold more than one value at a time. Each
 element can be of any data type, and you can access elements using their index.
@@ -120,14 +198,59 @@ myArray.push(5);
 console.log(myArray);
 ```
 
+#### Undefined
+
+`undefined` is a special value that indicates that a variable has not been
+assigned a value. When you declare a variable but do not assign a value to it,
+its value is `undefined` by default.
+
+```javascript
+// Declaring a variable without assigning a value
+let myVar;
+
+// The value of myVar is undefined
+// Expected output: undefined
+console.log(myVar);
+
+// 'typeof' returns the type of a variable
+// Expected output: "undefined"
+console.log(typeof myVar);
+```
+
+#### Null
+
+`null` is another special value which represents the intentional absence of any
+object value. It is often used to indicate that a variable should have no value.
+
+```javascript
+// Assigning null to a variable
+let myVar = null;
+
+// Expected output: null
+console.log(myVar);
+
+// 'typeof' returns the type of a variable
+// Interestingly, for historical reasons, typeof null returns "object".
+// Expected output: "object"
+console.log(typeof myVar);
+
+// To explicitly check for null, you can use strict equality
+// Expected output: true
+console.log(myVar === null);
+```
+
+Both `undefined` and `null` are often considered "empty" values, but they are
+not the same. `undefined` means that a variable has been declared but has not
+yet been assigned a value, whereas `null` is an assignment value that represents
+no specific object.
+
 ### Expressions vs Statements
 
 An expression is a piece of code that produces a value. It can be a single
 value, a variable, or a more complex operation.
 
-A statement performs an action. Statements do something and are executed by the
-JavaScript engine. If statements, loops, and function declarations are examples
-of statements.
+A statement performs an action. If statements, loops, and function declarations
+are examples of statements.
 
 #### Expression
 
@@ -337,8 +460,8 @@ console.log(addNumbers(2, 3)); // Calling the function with arguments 2 and 3, E
 
 ### Objects
 
-Objects in JavaScript are collections of key-value pairs. The keys are strings
-(or Symbols), and the values can be of any data type.
+Objects are collections of key-value pairs. The keys are strings (or Symbols),
+and the values can be of any data type.
 
 #### Creation and Accessing Properties
 
@@ -474,8 +597,8 @@ console.log(name);
 #### Closures
 
 A closure is a function that has access to its own scope, the outer function’s
-scope, and the global scope. This is a powerful feature in JavaScript because it
-allows for data encapsulation and functional programming patterns.
+scope, and the global scope. This is a powerful feature because it allows for
+data encapsulation and functional programming patterns.
 
 ```javascript
 function outer() {
@@ -538,3 +661,5 @@ const { name, age } = person; // Destructuring the object into separate variable
 console.log(name); // Expected output: 'Alice'
 console.log(age); // Expected output: 25
 ```
+
+Certainly, let's add content for `undefined` and `null` data types:
