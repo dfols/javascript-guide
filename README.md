@@ -457,6 +457,33 @@ function addNumbers(a, b) {
 console.log(addNumbers(2, 3)); // Calling the function with arguments 2 and 3, Expected output: 5
 ```
 
+## Defining Functions
+
+In JavaScript, the two methods of defining functions are commonly referred to as function expressions and function declarations.
+
+Function Expression
+```javascript
+// In a function expression, the function is assigned to a variable, and then called by that variable name
+
+// an anonymous function is being assigned to variable addNumbers
+const addNumbers = function(a, b) {
+   return a + b
+   }
+// a function named addNumbers is being assigned to variable add, making it the chosen variable when you want to call said function
+const add = function addNumbers(a, b){
+}
+add(1,2);
+```
+
+Function Declaration
+```javascript
+// In a function declaration, the function is defined using the `function` keyword. The function name is what you would use to call the function
+function addNumbers(a, b) {
+   return a + b;
+   }
+addNumbers(1, 3)
+```
+
 ### Objects
 
 Objects are collections of key-value pairs. The keys are strings (or Symbols),
