@@ -1,121 +1,292 @@
-### what is it?
+# JavaScript Guide
 
-JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It was created in 1995 by Brendan Eich while he was an engineer at Netscape. Originally designed to add interactivity to websites, it has since become one of the core technologies of the web, alongside HTML and CSS.
+This guide is designed to provide a comprehensive overview of JavaScript, a
+versatile programming language widely used for web development. Topics will be
+arranged from basic to advanced, with clear code examples and explanations.
 
-Here are some key points about JavaScript:
+## Table of Contents
 
-**Interactivity on websites:** JavaScript is primarily used to enhance the interactivity of a website. It can be used to create features like interactive forms, animated graphics, photo slideshows, and complex user interface patterns. For example, JavaScript can respond to user actions such as clicks or key presses, change the content or style of an HTML page dynamically, or fetch new data from the server without reloading the page (a technique known as Ajax).
-    
-**Client-side and server-side:** Although traditionally a client-side language run in the web browser, JavaScript can also be used on the server-side through technologies like Node.js. This means that JavaScript can be used to build entire web applications from front to back.
+1. [Variables and Variable Types](#variables-and-variable-types)
+   - const, let, var
+   - Types of values
+2. [Expressions vs Statements](#expressions-vs-statements)
+3. [Arithmetic Operators](#arithmetic-operators)
+4. [Assignment Operators](#assignment-operators)
+5. [Comparison Operators](#comparison-operators)
+6. [Logical Operators](#logical-operators)
+7. [Conditional Statements](#conditional-statements)
+8. [Loops](#loops)
+9. [Functions](#functions)
+   - Parameters
+   - Arguments
+10. [Scope](#scope)
+    - Local
+    - Global
+    - Closures
+11. [Modern JavaScript Features](#modern-javascript-features)
+    - Arrow Functions
+    - Template Strings
+    - Spread Operator
+    - Destructuring
 
+### Variables and Variable Types
 
-### how to run JS code
-* in the browser you can type in the console
-* adding `<script>` tag inside of html
-	* `src=""`
-* using node
-
-### variable declaration / initialization
-
-
-![[Screenshot 2023-06-05 at 4.56.14 PM.png]]
-
-### types of variables
-1. Number
-2. String
-3. Boolean
-4. Object
-5. Array
-6. null
-7. undefined
-8. Function
-9. Symbol (dont worry about it for now)
-
-
-
-
-### alert / prompt / confirm
-
-````javascript
-alert("Hello");
-````
+#### const, let, var
 
 ```javascript
-let age = prompt("How old are you?, 100);
-alert("You are " + age + "years old!"); // You are 100 years old!
+const myConstant = 10; // Declaring a constant variable
+let myVariable = 20; // Declaring a variable that can be reassigned
+var myOldVariable = 30; // var is the old way of declaring variables
 ```
 
-```javascript
-let isBoss = confirm("Are you the boss?");
-alert( isBoss ); // true if OK is pressed
-```
-### functions
+#### Types of values
+
+##### String
 
 ```javascript
-function add(a, b) {
-  return a + b;
+const myString = "Hello, World!"; // Declaring a string
+
+console.log(typeof myString); // Expected output: "string"
+console.log(myString[0]); // Expected output: "H" (string index)
+console.log(myString.length); // Expected output: 13 (string length)
+console.log(myString.indexOf("World")); // Expected output: 7
+console.log(myString.startsWith("Hello")); // Expected output: true
+console.log(myString.slice(0, 5)); // Expected output: "Hello"
+```
+
+##### Array
+
+```javascript
+const myArray = [1, 2, 3, 4, 5]; // Array creation
+
+// filter - creates a new array with elements that pass the test
+const evenNumbers = myArray.filter((number) => number % 2 === 0);
+console.log(evenNumbers); // Expected output: [2, 4]
+
+// map - creates a new array with the results of calling a function for every array element
+const squaredNumbers = myArray.map((number) => number * number);
+console.log(squaredNumbers); // Expected output: [1, 4, 9, 16, 25]
+
+// pop - removes the last element from an array
+myArray.pop();
+console.log(myArray); // Expected output: [1, 2, 3, 4]
+
+// push - adds a new element to the end of an array
+myArray.push(5);
+console.log(myArray); // Expected output: [1, 2, 3, 4, 5]
+```
+
+### Expressions vs Statements
+
+#### Expression
+
+```javascript
+3 + 5; // Expression
+myVariable; // Expression
+2 * (x + y); // Expression
+```
+
+#### Statement
+
+```javascript
+if (condition) {
+  // Statement
+  // code block
 }
-```
 
-```javascript
-const multiply = function(a, b) {
-  return a * b;
-};
-```
-
-```javascript
-const divide = (a, b) => {
-  return a / b;
-};
-```
-
-### objects
-
-```javascript
-// Create an object
-const person = {
-  name: 'John',
-  age: 30,
-  profession: 'Engineer'
-};
-
-// Access properties using dot notation
-console.log(person.name); // Output: John
-console.log(person.age); // Output: 30
-console.log(person.profession); // Output: Engineer
-```
-### comparisons
-1. < or >
-	1. <= or >=
-2. ==
-3. !=
-```javascript
-let age = 18;
-
-// Check the age using if/else statements
-if (age >= 18) {
-  console.log("You are eligible to vote!");
-} else {
-  console.log("You are not old enough to vote yet.");
-}
-```
-
-### loops
-
-for
-
-```javascript
 for (let i = 0; i < 5; i++) {
-  console.log(i);
+  // Statement
+  // code block
 }
+
+function myFunction() {
+  // Statement
+  // code block
+}
+
+let x = 3; // Statement
 ```
 
-while
+### Arithmetic Operators
+
+```javascript
+console.log(3 + 4); // Addition, Expected output: 7
+console.log(5 - 2); // Subtraction, Expected output: 3
+console.log(6 * 2); // Multiplication, Expected output: 12
+console.log(8 / 4); // Division, Expected output: 2
+console.log(7 % 3); // Modulus (Remainder), Expected output: 1
+```
+
+### Assignment Operators
+
+```javascript
+let a = 5;
+a += 2; // Same as a = a + 2
+a -= 3; // Same as a = a - 3
+a *= 4; // Same as a = a * 4
+a /= 2; // Same as a = a / 2
+a %= 3; // Same as a = a % 3
+```
+
+### Comparison Operators
+
+```javascript
+console.log(5 == "5"); // Equality (loose), Expected output: true
+console.log(5 != "5"); // Inequality (loose), Expected output: false
+console.log(5 === "5"); // Equality (strict), Expected output: false
+console.log(5 !== "5"); // Inequality (strict), Expected output: true
+console.log(5 > 3); // Greater than, Expected output: true
+console.log(5 < 3); // Less than, Expected output: false
+console.log(5 >= 5); // Greater than or equal to, Expected output: true
+console.log(5 <= 4); // Less than or equal to, Expected output: false
+```
+
+### Logical Operators
+
+```javascript
+console.log(true && false); // Logical AND, Expected output: false
+console.log(true || false); // Logical OR, Expected output: true
+console.log(!true); // Logical NOT, Expected output: false
+```
+
+### Conditional Statements
+
+```javascript
+const age = 18;
+
+if (age >= 18) {
+  // if
+  console.log("You are an adult.");
+} else if (age >= 13) {
+  // else if
+  console.log("You are a teenager.");
+} else {
+  // else
+  console.log("You are a child.");
+}
+
+// Ternary operator
+const message = age >= 18 ? "You are an adult." : "You are not an adult.";
+console.log(message);
+```
+
+### Loops
 
 ```javascript
 let i = 0;
-while (i < 5) {
+while (i < 3) {
+  // while loop
   console.log(i);
   i++;
 }
+
+do {
+  // do while loop
+  console.log(i);
+  i--;
+} while (i > 0);
+
+for (let j = 0; j < 3; j++) {
+  // for loop
+  console.log(j);
+}
+
+const array = [1, 2, 3];
+for (const element of array) {
+  // for...of loop
+  console.log(element);
+}
+
+for (const index in array) {
+  // for...in loop (usually for objects)
+  console.log(index);
+}
+
+array.forEach((element, index) => {
+  // forEach loop
+  console.log(`Element at index ${index} is ${element}`);
+});
+```
+
+### Functions
+
+```javascript
+function addNumbers(a, b) {
+  // Parameters are a and b
+  return a + b;
+}
+console.log(addNumbers(2, 3)); // Arguments are 2 and 3, Expected output: 5
+```
+
+### Scope
+
+#### Local Scope
+
+```javascript
+function showName() {
+  const name = "Alice"; // local scope
+  console.log(name);
+}
+showName();
+console.log(name); // ReferenceError: name is not defined
+```
+
+#### Global Scope
+
+```javascript
+const name = '
+
+Alice'; // global scope
+function showName() {
+  console.log(name);
+}
+showName(); // Expected output: 'Alice'
+console.log(name); // Expected output: 'Alice'
+```
+
+#### Closures
+
+```javascript
+function outer() {
+  const outerVar = "I am from outer function";
+  function inner() {
+    console.log(outerVar);
+  }
+  return inner;
+}
+const innerFunction = outer();
+innerFunction(); // Expected output: 'I am from outer function'
+```
+
+### Modern JavaScript Features
+
+#### Arrow Functions
+
+```javascript
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // Expected output: 5
+```
+
+#### Template Strings
+
+```javascript
+const name = "Alice";
+console.log(`Hello, ${name}!`); // Expected output: 'Hello, Alice!'
+```
+
+#### Spread Operator
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2); // Expected output: [1, 2, 3, 4, 5]
+```
+
+#### Destructuring
+
+```javascript
+const person = { name: "Alice", age: 25 };
+const { name, age } = person;
+console.log(name); // Expected output: 'Alice'
+console.log(age); // Expected output: 25
 ```
