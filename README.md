@@ -41,9 +41,16 @@ dynamically typed language, which means you don't have to specify the type of
 data that a variable will store.
 
 ```javascript
-const myConstant = 10; // Declaring a constant variable. This value cannot be changed once it's set.
-let myVariable = 20; // Declaring a variable that can be reassigned to a new value.
-var myOldVariable = 30; // 'var' is the old way of declaring variables, but it's better to use 'let' or 'const'.
+// Declaring a constant variable. This value cannot be changed
+// once it's set.
+const myConstant = 10;
+
+// Declaring a variable that can be reassigned to a new value.
+let myVariable = 20;
+
+// 'var' is the old way of declaring variables, but it's better
+// to use 'let' or 'const'.
+var myOldVariable = 30;
 ```
 
 #### Types of values
@@ -54,14 +61,32 @@ Strings are sequences of characters used to represent text. They can be enclosed
 in single quotes (`'`), double quotes (`"`), or backticks (`).
 
 ```javascript
-const myString = "Hello, World!"; // Declaring a string
+// Declaring a string
+const myString = "Hello, World!";
 
-console.log(typeof myString); // 'typeof' returns the type of a variable, Expected output: "string"
-console.log(myString[0]); // Strings are indexed like arrays, Expected output: "H" (string index)
-console.log(myString.length); // 'length' property returns the number of characters, Expected output: 13 (string length)
-console.log(myString.indexOf("World")); // 'indexOf' returns the position of the substring, Expected output: 7
-console.log(myString.startsWith("Hello")); // 'startsWith' checks if the string starts with the given characters, Expected output: true
-console.log(myString.slice(0, 5)); // 'slice' extracts a section of a string, Expected output: "Hello"
+// 'typeof' returns the type of a variable
+// Expected output: "string"
+console.log(typeof myString);
+
+// Strings are indexed like arrays
+// Expected output: "H" (first character of the string)
+console.log(myString[0]);
+
+// 'length' property returns the number of characters
+// Expected output: 13 (length of "Hello, World!")
+console.log(myString.length);
+
+// 'indexOf' returns the position of the substring
+// Expected output: 7 (position of "World")
+console.log(myString.indexOf("World"));
+
+// 'startsWith' checks if the string starts with the given characters
+// Expected output: true
+console.log(myString.startsWith("Hello"));
+
+// 'slice' extracts a section of a string
+// Expected output: "Hello"
+console.log(myString.slice(0, 5));
 ```
 
 ##### Array
@@ -70,23 +95,29 @@ Arrays are special variables that can hold more than one value at a time. Each
 element can be of any data type, and you can access elements using their index.
 
 ```javascript
-const myArray = [1, 2, 3, 4, 5]; // Array creation
+// Array creation
+const myArray = [1, 2, 3, 4, 5];
 
-// filter - creates a new array with elements that pass the test implemented by the provided function
-const evenNumbers = myArray.filter((number) => number % 2 === 0);
-console.log(evenNumbers); // Expected output: [2, 4]
+// filter - creates a new array with elements that pass the test
+// implemented by the provided function
+// Expected output: [2, 4]
+console.log(myArray.filter((number) => number % 2 === 0));
 
-// map - creates a new array with the results of calling a provided function on every element in the calling array
-const squaredNumbers = myArray.map((number) => number * number);
-console.log(squaredNumbers); // Expected output: [1, 4, 9, 16, 25]
+// map - creates a new array with the results of calling a provided function
+// on every element in the calling array
+// Expected output: [1, 4, 9, 16, 25]
+console.log(myArray.map((number) => number * number));
 
 // pop - removes the last element from an array and returns that element
+// After pop: [1, 2, 3, 4]
 myArray.pop();
-console.log(myArray); // Expected output: [1, 2, 3, 4]
+console.log(myArray);
 
-// push - adds one or more elements to the end of an array and returns the new length of the array
+// push - adds one or more elements to the end of an array
+// and returns the new length of the array
+// After push: [1, 2, 3, 4, 5]
 myArray.push(5);
-console.log(myArray); // Expected output: [1, 2, 3, 4, 5]
+console.log(myArray);
 ```
 
 ### Expressions vs Statements
@@ -110,23 +141,21 @@ myVariable; // Expression - it produces the value stored in 'myVariable'
 
 ```javascript
 if (condition) {
-  // 'if' is a statement that
-
- performs different actions based on different conditions
-  // code block
+  // 'if' is a statement that performs different actions
+  // based on different conditions
 }
 
 for (let i = 0; i < 5; i++) {
   // 'for' is a statement used for looping
-  // code block
 }
 
 function myFunction() {
   // 'function' is a statement for defining a function
-  // code block
 }
 
-let x = 3; // Statement - it does not produce a value but performs the action of assigning 3 to x
+// Statement - it does not produce a value but performs the action
+// of assigning 3 to x
+let x = 3;
 ```
 
 ### Arithmetic Operators
@@ -165,14 +194,37 @@ boolean value, either `true` or `false`. They are often used in conditional
 statements.
 
 ```javascript
-console.log(5 == "5"); // Equality (loose), Expected output: true - compares values irrespective of type
-console.log(5 != "5"); // Inequality (loose), Expected output: false - the opposite of ==
-console.log(5 === "5"); // Equality (strict), Expected output: false - compares both value and type
-console.log(5 !== "5"); // Inequality (strict), Expected output: true - the opposite of ===
-console.log(5 > 3); // Greater than, Expected output: true
-console.log(5 < 3); // Less than, Expected output: false
-console.log(5 >= 5); // Greater than or equal to, Expected output: true
-console.log(5 <= 4); // Less than or equal to, Expected output: false
+// Equality (loose), compares values irrespective of type
+// Expected output: true
+console.log(5 == "5");
+
+// Inequality (loose), the opposite of ==
+// Expected output: false
+console.log(5 != "5");
+
+// Equality (strict), compares both value and type
+// Expected output: false
+console.log(5 === "5");
+
+// Inequality (strict), the opposite of ===
+// Expected output: true
+console.log(5 !== "5");
+
+// Greater than
+// Expected output: true
+console.log(5 > 3);
+
+// Less than
+// Expected output: false
+console.log(5 < 3);
+
+// Greater than or equal to
+// Expected output: true
+console.log(5 >= 5);
+
+// Less than or equal to
+// Expected output: false
+console.log(5 <= 4);
 ```
 
 ### Logical Operators
@@ -181,9 +233,18 @@ Logical operators are used to determine the logic between multiple conditions.
 They return a boolean value based on the logic of the conditions.
 
 ```javascript
-console.log(true && false); // Logical AND, Expected output: false - returns true if both operands are true
-console.log(true || false); // Logical OR, Expected output: true - returns true if at least one operand is true
-console.log(!true); // Logical NOT, Expected output: false - negates the value, turns true to false and vice versa
+// Logical AND, returns true if both operands are true
+// Expected output: false
+console.log(true && false);
+
+// Logical OR, returns true if at least one operand is true
+// Expected output: true
+console.log(true || false);
+
+// Logical NOT, negates the value,
+// turns true to false and vice versa
+// Expected output: false
+console.log(!true);
 ```
 
 ### Conditional Statements
@@ -194,16 +255,17 @@ conditions. This is used for decision making in code.
 ```javascript
 const age = 18;
 
+// 'if' - executes code block if the condition is true
 if (age >= 18) {
-  // 'if' - executes code block if the condition is true
-  console.log("You are an adult
-
-.");
-} else if (age >= 13) {
-  // 'else if' - executes if the previous condition is false and the current condition is true
+  console.log("You are an adult.");
+}
+// 'else if' - executes if the previous condition is false
+// and the current condition is true
+else if (age >= 13) {
   console.log("You are a teenager.");
-} else {
-  // 'else' - executes if all the preceding conditions are false
+}
+// 'else' - executes if all the preceding conditions are false
+else {
   console.log("You are a child.");
 }
 
@@ -219,36 +281,43 @@ you want to run the same code repeatedly, each time with a different value.
 
 ```javascript
 let i = 0;
+
+// 'while' loop - code block will continue to execute
+// as long as the condition is true
 while (i < 3) {
-  // 'while' loop - code block will continue to execute as long as the condition is true
   console.log(i);
   i++;
 }
 
+// 'do while' loop - code block will execute once,
+// and then will continue to execute as long as the condition is true
 do {
-  // 'do while' loop - code block will execute once, and then will continue to execute as long as the condition is true
   console.log(i);
   i--;
 } while (i > 0);
 
+// 'for' loop - the most structured loop, with a counter (usually a number),
+// a condition, and an incrementer
 for (let j = 0; j < 3; j++) {
-  // 'for' loop - the most structured loop, with a counter (usually a number), a condition, and an incrementer
   console.log(j);
 }
 
 const array = [1, 2, 3];
+
+// 'for...of' loop - iterates over iterable objects (like arrays or strings),
+// and access the value
 for (const element of array) {
-  // 'for...of' loop - iterates over iterable objects (like arrays or strings), and access the value
   console.log(element);
 }
 
+// 'for...in' loop - iterates over the properties of an object
+// (the object keys), usually used for objects
 for (const index in array) {
-  // 'for...in' loop - iterates over the properties of an object (the object keys), usually used for objects
   console.log(index);
 }
 
+// 'forEach' loop - executes a provided function once for each array element
 array.forEach((element, index) => {
-  // 'forEach' loop - executes a provided function once for each array element
   console.log(`Element at index ${index} is ${element}`);
 });
 ```
@@ -325,8 +394,10 @@ The `confirm` method displays a dialog box with a specified message, along with
 an OK and a Cancel button.
 
 ```javascript
+// Asks user for confirmation and stores the response
+// Expected output: true if OK is pressed, false if Cancel is pressed
 const userConfirmation = confirm("Do you want to continue?");
-console.log(userConfirmation); // Expected output: true if OK is pressed, false if Cancel is pressed
+console.log(userConfirmation);
 ```
 
 ### Linking a JavaScript File in HTML
@@ -369,11 +440,14 @@ portion of the code, such as inside a function.
 
 ```javascript
 function showName() {
-  const name = "Alice"; // 'name' is defined within the function, and so it has a local scope
-  console.log(name); // Accessible within the function
+  // 'name' is defined within the function, and so it has a local scope
+  const name = "Alice";
+  // Accessible within the function
+  console.log(name);
 }
 showName();
-console.log(name); // ReferenceError: name is not defined, because it's out of scope
+// Will produce a ReferenceError because 'name' is out of scope
+console.log(name);
 ```
 
 #### Global Scope
@@ -383,12 +457,18 @@ defined in the global scope. This means it can be accessed from any part of the
 code, including within functions.
 
 ```javascript
-const name = "Alice"; // 'name' is declared outside the function, making it globally scoped
+// 'name' is declared outside the function, making it globally scoped
+const name = "Alice";
+
 function showName() {
-  console.log(name); // Accessible within the function because 'name' is global
+  // Accessible within the function because 'name' is global
+  console.log(name);
 }
-showName(); // Expected output: 'Alice'
-console.log(name); // Expected output: 'Alice'
+// Expected output: 'Alice'
+showName();
+
+// Expected output: 'Alice'
+console.log(name);
 ```
 
 #### Closures
@@ -430,7 +510,8 @@ strings using `${}`.
 
 ```javascript
 const name = "Alice";
-console.log(`Hello, ${name}!`); // Embedded expression to concatenate strings, Expected output: 'Hello, Alice!'
+// Expected output: 'Hello, Alice!'
+console.log(`Hello, ${name}!`);
 ```
 
 #### Spread Operator
