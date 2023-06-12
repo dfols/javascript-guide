@@ -457,7 +457,7 @@ function addNumbers(a, b) {
 console.log(addNumbers(2, 3)); // Calling the function with arguments 2 and 3, Expected output: 5
 ```
 
-## Defining Functions
+# Defining Functions
 
 In JavaScript, the two methods of defining functions are commonly referred to as function expressions and function declarations.
 
