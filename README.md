@@ -19,11 +19,14 @@ arranged from basic to advanced, with clear code examples and explanations.
 9. [Functions](#functions)
    - Parameters
    - Arguments
-10. [Scope](#scope)
+10. [Objects](#objects)
+    - Creation
+    - Accessing Properties
+11. [Scope](#scope)
     - Local
     - Global
     - Closures
-11. [Modern JavaScript Features](#modern-javascript-features)
+12. [Modern JavaScript Features](#modern-javascript-features)
     - Arrow Functions
     - Template Strings
     - Spread Operator
@@ -218,6 +221,40 @@ function addNumbers(a, b) {
 console.log(addNumbers(2, 3)); // Arguments are 2 and 3, Expected output: 5
 ```
 
+### Objects
+
+Objects in JavaScript are collections of key-value pairs. The keys are strings
+(or Symbols), and the values can be of any data type.
+
+#### Creation and Accessing Properties
+
+```javascript
+// Creating an object using object literal syntax
+const person = {
+  name: "John Doe",
+  age: 30,
+  isEmployed: true,
+};
+
+// Creating an object using the 'new' keyword
+const anotherPerson = new Object();
+anotherPerson.name = "Jane Doe";
+anotherPerson.age = 25;
+anotherPerson.isEmployed = false;
+
+// Accessing properties using dot notation
+console.log(person.name); // Expected output: 'John Doe'
+console.log(anotherPerson.age); // Expected output: 25
+
+// Accessing properties using bracket notation
+console.log(person["isEmployed"]); // Expected output: true
+console.log(anotherPerson["name"]); // Expected output: 'Jane Doe'
+
+// Useful when the property name is stored in a variable
+const propertyName = "age";
+console.log(person[propertyName]); // Expected output: 30
+```
+
 ### Scope
 
 #### Local Scope
@@ -290,3 +327,5 @@ const { name, age } = person;
 console.log(name); // Expected output: 'Alice'
 console.log(age); // Expected output: 25
 ```
+
+## Updated Table of Contents
