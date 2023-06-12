@@ -481,8 +481,14 @@ for (const element of array) {
 
 // 'for...in' loop - iterates over the properties of an object
 // (the object keys), usually used for objects
-for (const index in array) {
-  console.log(index);
+const person = {
+  name: "John",
+  age: 30,
+  occupation: "Developer",
+};
+
+for (const key in person) {
+  console.log(`Key: ${key}, Value: ${person[key]}`);
 }
 
 // 'forEach' loop - executes a provided function once for each array element
