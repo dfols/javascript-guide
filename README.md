@@ -1,8 +1,7 @@
 # JavaScript Guide
 
 This guide is designed to provide a comprehensive overview of JavaScript, a
-versatile programming language widely used for web development. Topics will be
-arranged from basic to advanced, with clear code examples and explanations.
+versatile programming language widely used for web development.
 
 ## Table of Contents
 
