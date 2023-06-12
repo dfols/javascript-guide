@@ -22,19 +22,19 @@ arranged from basic to advanced, with clear code examples and explanations.
 10. [Objects](#objects)
     - Creation
     - Accessing Properties
-11. [Scope](#scope)
+11. [Prompt, Alert, and Confirm](#prompt-alert-and-confirm)
+12. [Linking a JavaScript File in HTML](#linking-a-javascript-file-in-html)
+13. [Scope](#scope)
     - Local
     - Global
     - Closures
-12. [Modern JavaScript Features](#modern-javascript-features)
+14. [Modern JavaScript Features](#modern-javascript-features)
     - Arrow Functions
     - Template Strings
     - Spread Operator
     - Destructuring
 
 ### Variables and Variable Types
-
-#### const, let, var
 
 ```javascript
 const myConstant = 10; // Declaring a constant variable
@@ -255,6 +255,62 @@ const propertyName = "age";
 console.log(person[propertyName]); // Expected output: 30
 ```
 
+### Prompt, Alert, and Confirm
+
+#### Alert
+
+The `alert` method displays a dialog box with a message and an OK button.
+
+```javascript
+alert("This is an alert dialog.");
+```
+
+#### Prompt
+
+The `prompt` method displays a dialog box that prompts the user for input.
+
+```javascript
+const name = prompt("Please enter your name");
+console.log(name); // Expected output: whatever the user entered
+```
+
+#### Confirm
+
+The `confirm` method displays a dialog box with a specified message, along with
+an OK and a Cancel button.
+
+```javascript
+const userConfirmation = confirm("Do you want to continue?");
+console.log(userConfirmation); // Expected output: true if OK is pressed, false if Cancel is pressed
+```
+
+### Linking a JavaScript File in HTML
+
+To link a JavaScript file in your HTML, you can use the `<script>` tag. This tag
+should be placed just before the closing `</body>` tag for performance reasons.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Web Page</title>
+  </head>
+  <body>
+    <!-- Your HTML content goes here -->
+
+    <!-- Linking the JavaScript file -->
+    <script src="path-to-your-javascript-file.js"></script>
+  </body>
+</html>
+```
+
+By placing the `<script>` tag at the bottom of the body, it ensures that the
+HTML content is loaded before the JavaScript executes, preventing any issues
+with trying to manipulate or interact with elements that have not yet been
+rendered on the page.
+
 ### Scope
 
 #### Local Scope
@@ -327,5 +383,3 @@ const { name, age } = person;
 console.log(name); // Expected output: 'Alice'
 console.log(age); // Expected output: 25
 ```
-
-## Updated Table of Contents
