@@ -64,15 +64,13 @@ language, which means you don't have to specify the type of data that a variable
 will store.
 
 ```javascript
-// Declaring a constant variable. This value cannot be changed
-// once it's set.
+// Declaring a constant variable. This value cannot be changed once it's set.
 const myConstant = 10;
 
 // Declaring a variable that can be reassigned to a new value.
 let myVariable = 20;
 
-// 'var' is the old way of declaring variables, but it's better
-// to use 'let' or 'const'.
+// 'var' is the old way of declaring variables, but it's better to use 'let' or 'const'.
 var myOldVariable = 30;
 ```
 
